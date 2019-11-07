@@ -56,7 +56,7 @@ Things you may want to cover:
 ## messageテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|
+|body|text|null: false|
 |image|string|
 |group_id|integer|null: false|
 |user_id|integer|null: false|
