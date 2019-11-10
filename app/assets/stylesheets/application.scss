@@ -1,4 +1,6 @@
 @import "./reset";
 @import "font-awesome-sprockets";
 @import "./font-awesome";
-@import "side_contents.scss"
+@import "_main_side.scss";
+@import "side_contents.scss";
+@import "main_contents.scss";
