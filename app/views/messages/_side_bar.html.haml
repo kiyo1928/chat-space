@@ -1,14 +1,19 @@
 .side-bar
   .header
-    %h3.header__name
-      ユーザーネーム
+    %h3.header__name  
+      = current_user.name
     %ul.header__lists
       %li.list
         = link_to '#' do
           = icon('fa', 'edit',class: 'icon')
       %li.list
-        = link_to '#' do
+        = link_to edit_user_path(current_user) do
           = icon('fa', 'cog',class: 'icon')
+      -# //サイドバーのアイコンを表示するための記述
+      -# prefixでのurl指定。必ず現在ログインしているユーザーが絡むので引数で指定することを忘れないこと
+      -# url指定の際には特にシングルクォーテーションは必要なし
+      -# = icon('fa', 'cog',class: 'icon')の'fa'はfontawesomeのclass名の頭文字2文字をとったもの。’cog'はアイコンの名前をとったもの。
+
   .groups
     .group
       .group__name
