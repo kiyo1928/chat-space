@@ -7,6 +7,8 @@
       - @group.users.each do |user|
         = user.name
         -# 理屈としてはgroupには複数のuserがいるのでそのuserをeach文を使って出している
+        -# message_controller.rbで取得してきた@groupからusersのを引っ張ってくる
+        -# さらにさらにそこからuserのnameカラムの情報を引っ張ってきている
     
   .header__right
     =link_to 'edit', edit_group_path(@group)

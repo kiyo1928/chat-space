@@ -97,6 +97,7 @@
   }
   // paddingで中央寄せ
   // display: flex;を使い、下の子要素を横並びにした
+  //親要素position: relative;
  
   .input__box-text{
     width: 100%;
@@ -107,18 +108,18 @@
     
    }
   // 横幅、フォントサイズ、文字色、高さ、余白の設定
-  //親要素position: relative;
+  
      
   .contents__image{
     display: inline-block;
     position: absolute;
     bottom: 30px;
-    right: 200px;
+    right: 190px;
     font-size: 1.3rem;
     cursor: pointer;
   }
   // placeholderの隣にアイコンの配置。
-  //.contents__imageを削除すると"洗濯してくださいの"記述が出てくるので削除不可   
+  //.contents__imageを削除すると"選択してくださいの"記述が出てくるので削除不可   
  
   #message_image[type="file"]{
      
@@ -143,7 +144,7 @@
   // 文字色、高さ、横幅、余白の指定
   // カーソルをあて際に指差しのてに変更
 
-  // formでの記述ができていない
+  
    
  
    
