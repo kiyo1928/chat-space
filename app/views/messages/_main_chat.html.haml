@@ -1,0 +1,72 @@
+.header
+  .header__left
+    .header__left__group
+      = @group.name
+    .header__left__member
+      member:
+      - @group.users.each do |user|
+        = user.name
+        -# 理屈としてはgroupには複数のuserがいるのでそのuserをeach文を使って出している
+        -# message_controller.rbで取得してきた@groupからusersのを引っ張ってくる
+        -# さらにさらにそこからuserのnameカラムの情報を引っ張ってきている
+    
+  .header__right
+    =link_to 'edit', edit_group_path(@group)
+    -# link_toで記述する時にはパスの方にはクォーテーションいらない
+    
+
+
+.main_contents
+  = render @messages
+
+  -# .contents
+  -#   .contents__name
+  -#     shouya
+  -#   .contents__date
+  -#     2019/10/08/19:14:39
+  -#   .contents__message
+  -#     This is a first message.
+
+
+  -# .footer_contents
+  -#   .contents__massage
+  -#     %form{action: "#", method: "post"}
+         
+  -#     .input__box  
+  -#       %input{ name: "content", placeholder: "type a message", type: "text", class: "input__box-text" }/
+
+  -#       .contents__image
+  -#         %label{class: "input-box__image", for: "message_image"} 
+  -#           = icon('fas', 'image')
+  -#           %input{type: "file", id:"message_image" }
+
+  -#       .contents__button
+          
+          
+  -#         %input{type: "submit", value: "Send", class: "submit-btn"}/
+
+  -# .footer_contents
+  -#   = form_for [@group, @message] do |f|
+  -#     = f.text_field :content, class: 'input__box-text', placeholder: 'type a message'
+  -#     .contents__image
+  -#       = f.label :image, class: "input-box__image" do
+  -#         = icon('fas', 'image')
+  -#         = f.file_field :image, id: 'message_image'
+  -#     = f.submit 'Send', class: 'contents__button'
+
+  -# .form
+  -#     = form_for [@group, @message] do |f|
+  -#       = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+  -#       .form__mask
+  -#         = f.label :image, class: 'form__mask__image' do
+  -#           = icon('fas', 'image', class: 'icon')
+  -#           = f.file_field :image, class: 'hidden'
+  -#       = f.submit 'Send', class: 'form__submit'
+      
+
+
+
+    
+        
+       
+      
