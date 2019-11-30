@@ -13,6 +13,8 @@ module ChatSpace
       g.javascripts false
       g.helper false
       g.test_framework false
+      # 標準時間を日本時刻に変更
+      config.time_zone = 'Tokyo'
     end 
     config.i18n.default_locale = :ja
   end
