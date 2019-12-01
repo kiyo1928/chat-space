@@ -4,36 +4,40 @@ $(function(){
     // カリキュラムに乗っている条件分岐はimageの有無の内容を大きく条件分岐したもの
     // 上記の理由からimageを司る表記をif文で条件分岐して変数に入れてからその変数を使って画像の表記をする
     // 上が画像ありの表記で下が画像なしの表記
-    if (message.image){
-      var image = `<img src= "${message.image}" >`
-     }else{
-      var image = ""
-     }
+    // if (message.image){
+    //   var image = `<img src= "${message.image}" >`
+    //  }else{
+    //   var image = ""
+    //  }
+
+    // 上記の条件文を三項演算子を利用した場合
+     var image = message.image? `<img src= "${message.image}" >`: ""
     
      
 
     
-                // shift + @の記法でクォーテーションをつけるのを忘れずに
-                // 上からメッセージ名前の要素、 投降日の要素、投降内容の要素、投降画像の要素
+      // shift + @の記法でクォーテーションをつけるのを忘れずに
+      // 上からメッセージ名前の要素、 投降日の要素、投降内容の要素、投降画像の要素
       var html = `<div class="contents">
       <div class="contents__name">
-                   ${message.nickname}
-                  </div>
-                 
-                  <div class="contents__date">
-                    ${message.created_at}
-                  </div>
-                
-                  <div class="contents__message">
-                    ${message.content}
-                  </div> 
-                  
-                  <div class="lower-message__image">
-                  ${image}
-                  </div>
-                  </div>`
+      ${message.nickname}
+      </div>
+     
+      <div class="contents__date">
+        ${message.created_at}
+      </div>
+    
+      <div class="contents__message">
+        ${message.content}
+      </div> 
+      
+      <div class="lower-message__image">
+        ${image}
 
-                  return html;
+      </div>
+      </div>`
+
+      return html;
                 }
     
 
