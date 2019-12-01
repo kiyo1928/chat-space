@@ -11,7 +11,7 @@ $(function(){
     //  }
 
     // 上記の条件文を三項演算子を利用した場合
-     var image = message.image? `<img src= "${message.image}" >`: ""
+     var image = message.image ? `<img src= "${message.image}" >`: ""
     
      
 
