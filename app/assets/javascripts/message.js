@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message){
-    console.log(message)
+   
     // カリキュラムに乗っている条件分岐はimageの有無の内容を大きく条件分岐したもの
     // 上記の理由からimageを司る表記をif文で条件分岐して変数に入れてからその変数を使って画像の表記をする
     // 上が画像ありの表記で下が画像なしの表記
