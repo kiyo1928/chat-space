@@ -1,47 +1,51 @@
 $(function(){
   function buildHTML(message){
-    // 「もしメッセージに画像が含まれていたら」という条件式
-    if (message.image) {
+    console.log(message)
+    // カリキュラムに乗っている条件分岐はimageの有無の内容を大きく条件分岐したもの
+    // 上記の理由からimageを司る表記をif文で条件分岐して変数に入れてからその変数を使って画像の表記をする
+    // 上が画像ありの表記で下が画像なしの表記
+    if (message.image){
+      var image = `<img src= "${message.image}" >`
+     }else{
+      var image = ""
+     }
+    
+     
+
+    
                 // shift + @の記法でクォーテーションをつけるのを忘れずに
                 // 上からメッセージ名前の要素、 投降日の要素、投降内容の要素、投降画像の要素
-      var html = `<div class="contents__name">
-                  ${message.nickname}
+      var html = `<div class="contents">
+      <div class="contents__name">
+                   ${message.nickname}
                   </div>
                  
                   <div class="contents__date">
-                  ${message.created_at}
+                    ${message.created_at}
                   </div>
                 
                   <div class="contents__message">
-                  ${message.content}
+                    ${message.content}
                   </div> 
                   
                   <div class="lower-message__image">
-                  <img src="${message.image}" >
+                  ${image}
+                  </div>
                   </div>`
+
+                  return html;
+                }
+    
+
                 
                 
 
-
-    } else {     
-                  // 上からメッセージを投稿した人の名前、投降日、投降内容の要素
-      var html =  `<div class="contents__name">
-                    ${message.nickname}
-                  </div>
-              
-                  <div class="contents__date">
-                    ${message.created_at}
-                  </div>
-                  <div class="contents__message">
-                    ${message.content}
-                  </div>`
-    }
-    console.log(html)
-    return html
-  }
+    
+    
 
     // class =new_messageのsubmit(sendボタン)を実装
   $('#new_message').on('submit',function(e){
+    
     // htmlの機能の無効化
     e.preventDefault();
     // フォームに入力したメッセージを取得
@@ -76,6 +80,7 @@ $(function(){
       // 連続で送信ボタンを押せるようにした
       $('.contents__button').prop('disabled', false);
       })
+     
 
       // 非同期通信失敗時
     .fail(function(){
