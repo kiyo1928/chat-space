@@ -9,3 +9,7 @@ json.created_at @message.created_at.strftime("%Y/%-m/%-d %-H:%M")
 
 # messageとusersはアソシエーションを組んでいるのでusersテーブルのnameカラムを取り出すことができる
 json.nickname @message.user.name
+
+# 自動更新をする時に使うもの
+# app/views/api/messages/index.json.jbuilderだとリロードをした時にしか取得ができないので非同期通信の際にも反映されるように以下を記述
+json.id @message.id
