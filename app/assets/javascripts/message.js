@@ -88,8 +88,10 @@ $(function(){
     var reloadMessages = function() {
       // groupのidを取得するためにdiv要素.header__left__groupからgroup-idの要素を取得
       group_id = $('.header__left__group').last().data('group-id')
+       // setIntervalのエラーが出ないように対策
+    // チャットのグループ以外ではfailの時のアラートが出ないようにする
     if(location.pathname == `/groups/${group_id}/messages`){
-      // 7秒ごとにリクエストをするように実装
+     
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     //  div要素contentsか最新(last())のメッセージを取得して、さらにその中からmessage-idを取得
     last_message_id = $('.contents').last().data('message-id')
@@ -124,10 +126,9 @@ $(function(){
     
   }; 
  
-    // setIntervalのエラーが出ないように対策
-    // チャットのグループ以外ではfailの時のアラートが出ないようにする
+   
   }
-
+   // 7秒ごとにリクエストをするように実装
   setInterval(reloadMessages, 7000);
   
 });
