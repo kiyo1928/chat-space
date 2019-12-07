@@ -5,3 +5,7 @@ json.array! @messages do |message|
   json.nickname message.user.name
   json.id message.id
 end
+
+
+
+

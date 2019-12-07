@@ -10,7 +10,7 @@ $(function(){
     //  }
 
     // 上記の条件文を三項演算子を利用した場合
-     var image = message.image ? `<img src= "${message.image}" >`: ""
+     var image = message.image ? `<img src= "${message.image}" >`: "" ;
     // dat-idが反映されるようにしている
     //  if (message.content && message.image) {
       // shift + @の記法でクォーテーションをつけるのを忘れずに
@@ -63,6 +63,7 @@ $(function(){
     // 非同期通信成功時
       // 引数dataにはcreate.json.jbuilerのデータ
     .done(function(data){
+      
       // function buildHTML(message)を起動(htmlの表示方法を定義)
       var html = buildHTML(data);
       // 送信したメッセージをclass= main_contentに入れるようにする(非同期通信をした際のメッセージの表示に必要)
@@ -80,19 +81,18 @@ $(function(){
       // 非同期通信失敗時
     .fail(function(){
         alert("メッセージ送信に失敗しました");
-
+        
+      });
     });
-  });
-
-  var reloadMessages = function() {
+    
+    var reloadMessages = function() {
+      // groupのidを取得するためにdiv要素.header__left__groupからgroup-idの要素を取得
+      group_id = $('.header__left__group').last().data('group-id')
+    if(location.pathname == `/groups/${group_id}/messages`){
+      // 7秒ごとにリクエストをするように実装
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     //  div要素contentsか最新(last())のメッセージを取得して、さらにその中からmessage-idを取得
     last_message_id = $('.contents').last().data('message-id')
-    // groupのidを取得するためにdiv要素.header__left__groupからgroup-idの要素を取得
-    group_id = $('.header__left__group').last().data('group-id')
-    
-  
-   
    
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
@@ -108,7 +108,6 @@ $(function(){
     })
     .done(function(messages) {
       // 追加するhtmlの入れ物を作る
-      
       var insertHTML = '';
       //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
       $.each(messages, function(i, message) {
@@ -127,11 +126,8 @@ $(function(){
  
     // setIntervalのエラーが出ないように対策
     // チャットのグループ以外ではfailの時のアラートが出ないようにする
-    group_id = $('.header__left__group').last().data('group-id')
-  if(location.pathname == `/groups/${group_id}/messages`){
-    // 7秒ごとにリクエストをするように実装
-  setInterval(reloadMessages, 7000);
- }
-  
+  }
 
+  setInterval(reloadMessages, 7000);
+  
 });
