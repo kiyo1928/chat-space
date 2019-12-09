@@ -128,6 +128,8 @@ $(function(){
  
    
   }
+
+  
    // 7秒ごとにリクエストをするように実装
   setInterval(reloadMessages, 7000);
   
