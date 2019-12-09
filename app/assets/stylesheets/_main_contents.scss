@@ -93,6 +93,7 @@
   
   .new_message{
     display: flex;
+    position: relative;
   }
 
   .input__box{
@@ -111,15 +112,15 @@
     font-size: 16px;
     color: #434A54;
     padding: 0 40px 0 10px;
-    position: relative;
+    // position: relative;
    }
   // 横幅、フォントサイズ、文字色、高さ、余白の設定
   //親要素position: relative;
 
    .input-box__image{
     position: absolute;
-    bottom: 30px;
-    right: 190px;
+    bottom: 12px;
+    right: 160px;
    }
   .contents__image{
     font-size: 1.3rem;
