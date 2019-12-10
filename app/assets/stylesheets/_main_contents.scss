@@ -33,18 +33,16 @@
         }
 
     &__right{
-      display: inline-block;
       float: right;
-      color: #00FFFF;
-      padding:28px;
-      padding-right: 60px;
+      padding:36px;
+      padding-right: 40px;
       font-weight: bold;
 
      a{
         text-decoration: none;
-        border: solid 1px #00FFFF;
+        border: solid 1px #38aef0;
         padding: 10px 20px;
-        color:#00FFFF;
+        color:#38aef0;
       }
     }
   }
@@ -88,7 +86,7 @@
 
 
   .footer_contents{
-   background-color: gray;
+   background-color: #d2d2d2;
    height: 90px;
   
   .new_message{
@@ -120,7 +118,7 @@
    .input-box__image{
     position: absolute;
     bottom: 12px;
-    right: 160px;
+    right: 140px;
    }
   .contents__image{
     font-size: 1.3rem;
